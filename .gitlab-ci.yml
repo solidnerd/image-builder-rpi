@@ -1,0 +1,9 @@
+stages:
+    - build
+
+image:
+    stage: build
+    image: docker:1.12
+    scripts:
+        - make shellcheck
+        - VERSION=${TRAVIS_TAG} make sd-image
