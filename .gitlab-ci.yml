@@ -1,0 +1,12 @@
+stages:
+    - build
+
+rpi-image:
+    stage: build
+    image: docker:1.12
+    script:
+        - make shellcheck
+        - VERSION=${TRAVIS_TAG} make sd-image
+    artifacts:
+        paths:
+        - /workspace/hypriotos-rpi-dirty.img.zip
