@@ -1,7 +1,7 @@
 stages:
     - build
 
-image:
+rpi-image:
     stage: build
     image: docker:1.12
     scripts:
